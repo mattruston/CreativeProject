@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoryViewController" customModule="CreativeProject" customModuleProvider="target">
+            <connections>
+                <outlet property="label" destination="tik-rs-WeL" id="wcm-S3-Veh"/>
+                <outlet property="nextButton" destination="uBh-yA-g7f" id="QdI-X7-r7o"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Thf-OT-oxI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tik-rs-WeL">
+                    <rect key="frame" x="20" y="20" width="627" height="158"/>
+                    <string key="text">Here is where the story is to be told. We will do this by having the text loading in a character at a time so that it is as if it is being typed in for the user to read. This hopefully wont have to scroll so when we localize this game for other languages we need to keep that in mind. Here I just want more text so that I can see if it will update the number of lines</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBh-yA-g7f">
+                    <rect key="frame" x="515" y="304" width="132" height="51"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <state key="normal" title="How nice">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.13469404450261779" green="0.13469404450261779" blue="0.13469404450261779" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="tik-rs-WeL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="AIj-KK-zLk"/>
+                <constraint firstItem="tik-rs-WeL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="NQt-OZ-MBU"/>
+                <constraint firstAttribute="trailing" secondItem="uBh-yA-g7f" secondAttribute="trailing" constant="20" id="REt-0f-riS"/>
+                <constraint firstAttribute="trailing" secondItem="tik-rs-WeL" secondAttribute="trailing" constant="20" id="fnY-AE-ECn"/>
+                <constraint firstAttribute="bottom" secondItem="uBh-yA-g7f" secondAttribute="bottom" constant="20" id="jsx-HC-Cs6"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
