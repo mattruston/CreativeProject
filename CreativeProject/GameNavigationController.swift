@@ -27,6 +27,17 @@ class GameNavigationController: UINavigationController {
 extension GameNavigationController: HomeViewControllerDelegate {
     func didTapStart() {
         let introViewController = StoryViewController()
+        introViewController.delegate = self
         show(introViewController, sender: self)
+    }
+}
+
+
+// MARK: - StoryViewControllerDelegate
+
+extension GameNavigationController: StoryViewControllerDelegate {
+    func didTapNext() {
+        let characterSelectViewController = CharacterSelectViewController()
+        show(characterSelectViewController, sender: self)
     }
 }

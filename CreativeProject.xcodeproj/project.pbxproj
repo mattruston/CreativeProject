@@ -15,6 +15,8 @@
 		C94D89AC1E88C13A007EBEEB /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94D89AB1E88C13A007EBEEB /* HomeViewController.xib */; };
 		C94D89AF1E88C297007EBEEB /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94D89AE1E88C297007EBEEB /* StoryViewController.swift */; };
 		C94D89B11E88C2B4007EBEEB /* StoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94D89B01E88C2B4007EBEEB /* StoryViewController.xib */; };
+		C9AB5EA61E8AD62700564DCE /* CharacterSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB5EA51E8AD62700564DCE /* CharacterSelectViewController.swift */; };
+		C9AB5EA81E8AD64600564DCE /* CharacterSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9AB5EA71E8AD64600564DCE /* CharacterSelectViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		C94D89AB1E88C13A007EBEEB /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		C94D89AE1E88C297007EBEEB /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		C94D89B01E88C2B4007EBEEB /* StoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryViewController.xib; sourceTree = "<group>"; };
+		C9AB5EA51E8AD62700564DCE /* CharacterSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelectViewController.swift; sourceTree = "<group>"; };
+		C9AB5EA71E8AD64600564DCE /* CharacterSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterSelectViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 				C94D89A51E88BF55007EBEEB /* GameNavigationController.swift */,
 				C94D89A91E88C057007EBEEB /* Home */,
 				C94D89AD1E88C277007EBEEB /* Story */,
+				C9AB5EA41E8AD60C00564DCE /* CharacterSelect */,
 				C94D89AA1E88C06D007EBEEB /* Resources */,
 			);
 			path = CreativeProject;
@@ -95,6 +100,15 @@
 				C94D89B01E88C2B4007EBEEB /* StoryViewController.xib */,
 			);
 			name = Story;
+			sourceTree = "<group>";
+		};
+		C9AB5EA41E8AD60C00564DCE /* CharacterSelect */ = {
+			isa = PBXGroup;
+			children = (
+				C9AB5EA51E8AD62700564DCE /* CharacterSelectViewController.swift */,
+				C9AB5EA71E8AD64600564DCE /* CharacterSelectViewController.xib */,
+			);
+			name = CharacterSelect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C94D89B11E88C2B4007EBEEB /* StoryViewController.xib in Resources */,
+				C9AB5EA81E8AD64600564DCE /* CharacterSelectViewController.xib in Resources */,
 				C94D899E1E88BF0B007EBEEB /* LaunchScreen.storyboard in Resources */,
 				C94D899B1E88BF0B007EBEEB /* Assets.xcassets in Resources */,
 				C94D89AC1E88C13A007EBEEB /* HomeViewController.xib in Resources */,
@@ -170,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AB5EA61E8AD62700564DCE /* CharacterSelectViewController.swift in Sources */,
 				C94D89AF1E88C297007EBEEB /* StoryViewController.swift in Sources */,
 				C94D89A61E88BF55007EBEEB /* GameNavigationController.swift in Sources */,
 				C94D89941E88BF0B007EBEEB /* AppDelegate.swift in Sources */,
@@ -325,6 +341,7 @@
 				C94D89A41E88BF0B007EBEEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

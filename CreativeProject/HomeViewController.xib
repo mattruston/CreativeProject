@@ -19,28 +19,45 @@
             <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game name to be decided game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="D7w-xA-QAs">
-                    <rect key="frame" x="20" y="74" width="627" height="45.5"/>
-                    <fontDescription key="fontDescription" type="italicSystem" pointSize="38"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzP-yt-Gvw">
-                    <rect key="frame" x="316" y="199.5" width="34" height="30"/>
-                    <state key="normal" title="Start"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startscreen" translatesAutoresizingMaskIntoConstraints="NO" id="Jpz-89-JfA">
+                    <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="Wqg-dy-bTN">
+                    <rect key="frame" x="50" y="25" width="567" height="207"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="208" id="JpS-z6-6fC"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzP-yt-Gvw">
+                    <rect key="frame" x="234" y="293" width="199" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="JE4-Lb-xuh"/>
+                    </constraints>
+                    <state key="normal" image="startbutton"/>
                     <connections>
                         <action selector="start" destination="-1" eventType="touchUpInside" id="QS9-e1-G6p"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.1176470588" green="0.74117647060000003" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.1346940445" green="0.1346940445" blue="0.1346940445" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="D7w-xA-QAs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="74" id="34D-OZ-ewL"/>
+                <constraint firstAttribute="bottom" secondItem="QzP-yt-Gvw" secondAttribute="bottom" constant="40" id="IRi-c7-wYw"/>
+                <constraint firstAttribute="trailing" secondItem="Jpz-89-JfA" secondAttribute="trailing" id="J98-zJ-B4C"/>
+                <constraint firstAttribute="bottom" secondItem="Jpz-89-JfA" secondAttribute="bottom" id="Z90-Fa-2Q4"/>
                 <constraint firstItem="QzP-yt-Gvw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZNe-8O-YQf"/>
-                <constraint firstItem="D7w-xA-QAs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ZTi-Yg-QpF"/>
-                <constraint firstItem="QzP-yt-Gvw" firstAttribute="top" secondItem="D7w-xA-QAs" secondAttribute="bottom" constant="80" id="bH8-b6-fqA"/>
-                <constraint firstAttribute="trailing" secondItem="D7w-xA-QAs" secondAttribute="trailing" constant="20" id="psW-xy-fBy"/>
+                <constraint firstItem="Jpz-89-JfA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="b68-d8-Ck8"/>
+                <constraint firstItem="Wqg-dy-bTN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="ebZ-h9-3gn"/>
+                <constraint firstAttribute="trailing" secondItem="Wqg-dy-bTN" secondAttribute="trailing" constant="50" id="pnq-34-NlB"/>
+                <constraint firstItem="Jpz-89-JfA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qVa-Fy-Guy"/>
+                <constraint firstItem="QzP-yt-Gvw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Wqg-dy-bTN" secondAttribute="bottom" constant="25" id="smX-hr-HQX"/>
+                <constraint firstItem="Wqg-dy-bTN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="udD-jT-pga"/>
+                <constraint firstItem="Wqg-dy-bTN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wgU-HY-fcP"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="startbutton" width="199" height="42"/>
+        <image name="startscreen" width="736" height="414"/>
+        <image name="title" width="482" height="207"/>
+    </resources>
 </document>

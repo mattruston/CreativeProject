@@ -8,18 +8,27 @@
 
 import UIKit
 
+protocol StoryViewControllerDelegate: class {
+    func didTapNext()
+}
+
 class StoryViewController: UIViewController {
     
     @IBOutlet fileprivate weak var label: UILabel!
     @IBOutlet fileprivate weak var nextButton: UIButton!
     
-    fileprivate let text = "There once was a child named bill bob. He was often teased as a child for having the name of a man, and for that he grew up quite quickly and with the responsibilities of an adult. By the age of five he was running his own lumber mill, and did so quite successfully."
+    fileprivate let text = "HI"//"Rumors speak of a spontaneous worldwide competition, one that occurs with little warning. The last supposed occurrence featured events no nation had been able to predict such as cookie baking and horse grooming, but that was centuries ago.\nJust today, the seers appeared once again, unseen for almost three hundred years. The Miramortem Games were announced with the date set for two months down the line. They listed off the participants, and you were included as one of many to represent your nation. No hints are given as to what the nations will be tested on come time of the event, but everyone knows that placing last will have negative consequences.\nAfter all, the last nation to supposedly have lost no longer exists."
+    
     fileprivate var charactersShown = 0
     fileprivate var pauseTime = 0
+    
+    weak var delegate: StoryViewControllerDelegate?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //TODO: Set font size so that there isn't too much text on smaller screens
         
         label.text = ""
         nextButton.isHidden = true
@@ -71,5 +80,9 @@ class StoryViewController: UIViewController {
             
             self.label.text = self.text.substring(to: self.text.index(after: index))
         }
+    }
+    
+    @IBAction func next() {
+        delegate?.didTapNext()
     }
 }
