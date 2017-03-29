@@ -8,6 +8,15 @@
 
 import UIKit
 
+protocol CharacterSelectViewControllerDelegate: class {
+    func didSelect()
+}
+
 class CharacterSelectViewController: UIViewController {
     
+    weak var delegate: CharacterSelectViewControllerDelegate?
+    
+    @IBAction func next() {
+        delegate?.didSelect()
+    }
 }

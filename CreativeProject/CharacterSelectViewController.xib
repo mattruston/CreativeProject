@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMU-11-zGh">
-                    <rect key="frame" x="67.5" y="37.5" width="532" height="300"/>
+                    <rect key="frame" x="55" y="37.5" width="557" height="300"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTz-Ce-rvu">
-                            <rect key="frame" x="87.5" y="159" width="357" height="141"/>
+                            <rect key="frame" x="100" y="159" width="357" height="141"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character2icon" translatesAutoresizingMaskIntoConstraints="NO" id="YAw-tz-YEY">
                                     <rect key="frame" x="0.0" y="0.0" width="141" height="141"/>
@@ -59,21 +59,41 @@
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character4icon" translatesAutoresizingMaskIntoConstraints="NO" id="0HZ-DY-mMk">
-                            <rect key="frame" x="391" y="0.0" width="141" height="141"/>
+                            <rect key="frame" x="416" y="0.0" width="141" height="141"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="0HZ-DY-mMk" secondAttribute="height" multiplier="1:1" id="3Ck-Dn-W5r"/>
                                 <constraint firstAttribute="height" constant="141" id="O37-ob-CL0"/>
                             </constraints>
                         </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who are you?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAt-m8-FLY">
+                            <rect key="frame" x="172" y="36.5" width="213.5" height="68"/>
+                            <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="58"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHC-qm-gHN">
+                            <rect key="frame" x="242" y="112" width="72" height="30"/>
+                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                            <state key="normal" title="Confirm">
+                                <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="next" destination="-1" eventType="touchUpInside" id="1mn-tz-R3s"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="0HZ-DY-mMk" secondAttribute="trailing" id="3Tv-lS-VDX"/>
+                        <constraint firstItem="MHC-qm-gHN" firstAttribute="centerX" secondItem="EMU-11-zGh" secondAttribute="centerX" id="Bd5-lq-7VK"/>
                         <constraint firstItem="2jL-9l-1s6" firstAttribute="top" secondItem="EMU-11-zGh" secondAttribute="top" id="NrI-jc-f6w"/>
+                        <constraint firstItem="MHC-qm-gHN" firstAttribute="top" secondItem="dAt-m8-FLY" secondAttribute="bottom" constant="7.5" id="YfV-x6-iEQ"/>
                         <constraint firstItem="0HZ-DY-mMk" firstAttribute="top" secondItem="EMU-11-zGh" secondAttribute="top" id="ZON-2w-qiu"/>
                         <constraint firstItem="2jL-9l-1s6" firstAttribute="leading" secondItem="EMU-11-zGh" secondAttribute="leading" id="cZX-Wi-hjf"/>
+                        <constraint firstItem="dAt-m8-FLY" firstAttribute="centerX" secondItem="EMU-11-zGh" secondAttribute="centerX" id="eIw-ib-VVE"/>
                         <constraint firstItem="XTz-Ce-rvu" firstAttribute="top" secondItem="2jL-9l-1s6" secondAttribute="bottom" constant="18" id="eKc-84-K6x"/>
                         <constraint firstAttribute="bottom" secondItem="XTz-Ce-rvu" secondAttribute="bottom" id="h6t-UV-kFS"/>
-                        <constraint firstItem="0HZ-DY-mMk" firstAttribute="leading" secondItem="2jL-9l-1s6" secondAttribute="trailing" constant="250" id="raR-LM-Emv"/>
+                        <constraint firstItem="0HZ-DY-mMk" firstAttribute="leading" secondItem="2jL-9l-1s6" secondAttribute="trailing" constant="275" id="raR-LM-Emv"/>
+                        <constraint firstItem="dAt-m8-FLY" firstAttribute="centerY" secondItem="2jL-9l-1s6" secondAttribute="centerY" id="s1y-S0-eAC"/>
                         <constraint firstItem="XTz-Ce-rvu" firstAttribute="centerX" secondItem="EMU-11-zGh" secondAttribute="centerX" id="yO2-zr-Smp"/>
                     </constraints>
                 </view>

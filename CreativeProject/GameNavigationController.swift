@@ -38,6 +38,17 @@ extension GameNavigationController: HomeViewControllerDelegate {
 extension GameNavigationController: StoryViewControllerDelegate {
     func didTapNext() {
         let characterSelectViewController = CharacterSelectViewController()
+        characterSelectViewController.delegate = self
         show(characterSelectViewController, sender: self)
+    }
+}
+
+
+// MARK: - CharacterSelectViewControllerDelegate
+
+extension GameNavigationController: CharacterSelectViewControllerDelegate {
+    func didSelect() {
+        let stageSelectViewController = StageSelectViewController()
+        show(stageSelectViewController, sender: self)
     }
 }
