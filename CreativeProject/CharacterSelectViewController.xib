@@ -12,6 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterSelectViewController" customModule="CreativeProject" customModuleProvider="target">
             <connections>
+                <outlet property="character1Icon" destination="2jL-9l-1s6" id="Ijr-OK-2Rg"/>
+                <outlet property="character2Icon" destination="YAw-tz-YEY" id="6YA-aC-ygt"/>
+                <outlet property="character3Icon" destination="mzt-gn-3ci" id="PAj-gG-mi2"/>
+                <outlet property="character4Icon" destination="0HZ-DY-mMk" id="R6Q-3r-S3M"/>
                 <outlet property="view" destination="iN0-l3-epB" id="pIS-XA-c9n"/>
             </connections>
         </placeholder>
@@ -26,15 +30,17 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTz-Ce-rvu">
                             <rect key="frame" x="100" y="159" width="357" height="141"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character2icon" translatesAutoresizingMaskIntoConstraints="NO" id="YAw-tz-YEY">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character2icon_unselected" highlightedImage="character2icon" translatesAutoresizingMaskIntoConstraints="NO" id="YAw-tz-YEY">
                                     <rect key="frame" x="0.0" y="0.0" width="141" height="141"/>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="141" id="Exz-Rn-z6Q"/>
                                         <constraint firstAttribute="width" secondItem="YAw-tz-YEY" secondAttribute="height" multiplier="1:1" id="WzJ-05-I9i"/>
                                     </constraints>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character3icon" translatesAutoresizingMaskIntoConstraints="NO" id="mzt-gn-3ci">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character3icon_unselected" highlightedImage="character3icon" translatesAutoresizingMaskIntoConstraints="NO" id="mzt-gn-3ci">
                                     <rect key="frame" x="216" y="0.0" width="141" height="141"/>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="141" id="D0a-Nv-SI5"/>
                                         <constraint firstAttribute="width" secondItem="mzt-gn-3ci" secondAttribute="height" id="zFL-2u-R5Q"/>
@@ -51,15 +57,17 @@
                                 <constraint firstItem="mzt-gn-3ci" firstAttribute="leading" secondItem="YAw-tz-YEY" secondAttribute="trailing" constant="75" id="yps-O1-qPJ"/>
                             </constraints>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character1icon" translatesAutoresizingMaskIntoConstraints="NO" id="2jL-9l-1s6">
+                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character1icon_unselected" highlightedImage="character1icon" translatesAutoresizingMaskIntoConstraints="NO" id="2jL-9l-1s6">
                             <rect key="frame" x="0.0" y="0.0" width="141" height="141"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="141" id="nnc-xf-Nxd"/>
                                 <constraint firstAttribute="width" secondItem="2jL-9l-1s6" secondAttribute="height" multiplier="1:1" id="udn-0O-KSK"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character4icon" translatesAutoresizingMaskIntoConstraints="NO" id="0HZ-DY-mMk">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character4icon_unselected" highlightedImage="character4icon" translatesAutoresizingMaskIntoConstraints="NO" id="0HZ-DY-mMk">
                             <rect key="frame" x="416" y="0.0" width="141" height="141"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="0HZ-DY-mMk" secondAttribute="height" multiplier="1:1" id="3Ck-Dn-W5r"/>
                                 <constraint firstAttribute="height" constant="141" id="O37-ob-CL0"/>
@@ -107,8 +115,12 @@
     </objects>
     <resources>
         <image name="character1icon" width="144" height="139"/>
+        <image name="character1icon_unselected" width="144" height="139"/>
         <image name="character2icon" width="135" height="129"/>
+        <image name="character2icon_unselected" width="135" height="129"/>
         <image name="character3icon" width="130" height="146"/>
+        <image name="character3icon_unselected" width="130" height="146"/>
         <image name="character4icon" width="129" height="141"/>
+        <image name="character4icon_unselected" width="129" height="141"/>
     </resources>
 </document>
