@@ -48,7 +48,8 @@ extension GameNavigationController: StoryViewControllerDelegate {
 
 extension GameNavigationController: CharacterSelectViewControllerDelegate {
     func didSelect() {
-        let stageSelectViewController = StageSelectViewController()
+        let character = Character()
+        let stageSelectViewController = StageSelectViewController(character: character)
         show(stageSelectViewController, sender: self)
     }
 }

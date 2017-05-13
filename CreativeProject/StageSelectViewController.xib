@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StageSelectViewController" customModule="CreativeProject" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundImageView" destination="NPE-ha-JXO" id="ffE-Q3-he5"/>
+                <outlet property="characterImageView" destination="FKN-cL-WtA" id="CjG-dg-q3G"/>
                 <outlet property="view" destination="iN0-l3-epB" id="S2D-9d-ZQu"/>
             </connections>
         </placeholder>
@@ -19,41 +22,59 @@
             <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOe-Nc-aH5">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NPE-ha-JXO">
                     <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barlocation" translatesAutoresizingMaskIntoConstraints="NO" id="fYp-oN-B1O">
-                            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parklocation" translatesAutoresizingMaskIntoConstraints="NO" id="n9F-xP-CJP">
-                            <rect key="frame" x="667" y="0.0" width="667" height="375"/>
-                        </imageView>
-                    </subviews>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgP-LD-rkb">
+                    <rect key="frame" x="20" y="165.5" width="48" height="43"/>
+                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="30"/>
+                    <state key="normal" title="&lt;---">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="previousLocation" destination="-1" eventType="touchUpInside" id="LyM-fp-2QJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flk-oy-kv5">
+                    <rect key="frame" x="599" y="165.5" width="48" height="43"/>
+                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="30"/>
+                    <state key="normal" title="---&gt;">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="nextLocation" destination="-1" eventType="touchUpInside" id="XMh-eb-920"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATb-aj-Qai">
+                    <rect key="frame" x="273.5" y="312" width="119" height="43"/>
+                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="30"/>
+                    <state key="normal" title="SELECT">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FKN-cL-WtA">
+                    <rect key="frame" x="50" y="20" width="75" height="75"/>
                     <constraints>
-                        <constraint firstItem="fYp-oN-B1O" firstAttribute="leading" secondItem="WOe-Nc-aH5" secondAttribute="leading" id="LdC-QN-dYi"/>
-                        <constraint firstItem="fYp-oN-B1O" firstAttribute="trailing" secondItem="n9F-xP-CJP" secondAttribute="leading" id="Lfq-Rq-zEU"/>
-                        <constraint firstItem="n9F-xP-CJP" firstAttribute="width" secondItem="fYp-oN-B1O" secondAttribute="width" id="QJt-ll-Tsm"/>
-                        <constraint firstItem="n9F-xP-CJP" firstAttribute="height" secondItem="fYp-oN-B1O" secondAttribute="height" id="XUp-fI-RRy"/>
-                        <constraint firstAttribute="bottom" secondItem="fYp-oN-B1O" secondAttribute="bottom" id="an3-5f-taY"/>
-                        <constraint firstItem="fYp-oN-B1O" firstAttribute="top" secondItem="WOe-Nc-aH5" secondAttribute="top" id="dQP-Np-ea3"/>
-                        <constraint firstAttribute="trailing" secondItem="n9F-xP-CJP" secondAttribute="trailing" id="rtb-uG-jRC"/>
-                        <constraint firstItem="n9F-xP-CJP" firstAttribute="top" secondItem="fYp-oN-B1O" secondAttribute="top" id="xXa-U9-C2j"/>
+                        <constraint firstAttribute="width" secondItem="FKN-cL-WtA" secondAttribute="height" multiplier="1:1" id="R9t-Bh-FLY"/>
+                        <constraint firstAttribute="height" constant="75" id="xQU-3Z-8Qe"/>
                     </constraints>
-                </scrollView>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="WOe-Nc-aH5" secondAttribute="trailing" id="8Gj-xc-6TI"/>
-                <constraint firstItem="WOe-Nc-aH5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="E0M-bd-5ad"/>
-                <constraint firstAttribute="bottom" secondItem="WOe-Nc-aH5" secondAttribute="bottom" id="TdE-tm-jSc"/>
-                <constraint firstItem="WOe-Nc-aH5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="f6R-OL-VLE"/>
-                <constraint firstItem="fYp-oN-B1O" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="yq5-zS-Xu4"/>
-                <constraint firstItem="fYp-oN-B1O" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="yql-Ml-ap5"/>
+                <constraint firstItem="NPE-ha-JXO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0Md-yB-y1K"/>
+                <constraint firstAttribute="trailing" secondItem="Flk-oy-kv5" secondAttribute="trailing" constant="20" id="8e9-Dh-3rx"/>
+                <constraint firstAttribute="trailing" secondItem="NPE-ha-JXO" secondAttribute="trailing" id="OiF-FR-naM"/>
+                <constraint firstItem="Flk-oy-kv5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OuA-8u-Ywj"/>
+                <constraint firstItem="VgP-LD-rkb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cDk-gi-sUC"/>
+                <constraint firstItem="NPE-ha-JXO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="edA-Kw-nEZ"/>
+                <constraint firstItem="FKN-cL-WtA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="j60-X5-lO7"/>
+                <constraint firstItem="VgP-LD-rkb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="jtf-wf-POl"/>
+                <constraint firstAttribute="bottom" secondItem="NPE-ha-JXO" secondAttribute="bottom" id="kCW-9C-oh4"/>
+                <constraint firstAttribute="bottom" secondItem="ATb-aj-Qai" secondAttribute="bottom" constant="20" id="otS-zX-FB0"/>
+                <constraint firstItem="ATb-aj-Qai" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wHJ-DI-VOg"/>
+                <constraint firstItem="FKN-cL-WtA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="xQa-2q-hdt"/>
             </constraints>
         </view>
     </objects>
-    <resources>
-        <image name="barlocation" width="736" height="414"/>
-        <image name="parklocation" width="736" height="414"/>
-    </resources>
 </document>

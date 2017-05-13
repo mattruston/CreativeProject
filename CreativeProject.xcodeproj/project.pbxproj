@@ -13,6 +13,8 @@
 		C90385E31EC7A17400DDD479 /* ActivitySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90385E21EC7A17400DDD479 /* ActivitySelectViewController.swift */; };
 		C90385E61EC7A2B200DDD479 /* EventSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90385E51EC7A2B200DDD479 /* EventSelectViewController.xib */; };
 		C90385E81EC7A2C900DDD479 /* EventSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90385E71EC7A2C900DDD479 /* EventSelectViewController.swift */; };
+		C90385EB1EC7B11400DDD479 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90385EA1EC7B11400DDD479 /* Locations.swift */; };
+		C90385ED1EC7B13D00DDD479 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90385EC1EC7B13D00DDD479 /* Characters.swift */; };
 		C94D89941E88BF0B007EBEEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94D89931E88BF0B007EBEEB /* AppDelegate.swift */; };
 		C94D899B1E88BF0B007EBEEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C94D899A1E88BF0B007EBEEB /* Assets.xcassets */; };
 		C94D899E1E88BF0B007EBEEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94D899C1E88BF0B007EBEEB /* LaunchScreen.storyboard */; };
@@ -32,6 +34,8 @@
 		C90385E21EC7A17400DDD479 /* ActivitySelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitySelectViewController.swift; sourceTree = "<group>"; };
 		C90385E51EC7A2B200DDD479 /* EventSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventSelectViewController.xib; sourceTree = "<group>"; };
 		C90385E71EC7A2C900DDD479 /* EventSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSelectViewController.swift; sourceTree = "<group>"; };
+		C90385EA1EC7B11400DDD479 /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		C90385EC1EC7B13D00DDD479 /* Characters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		C94D89901E88BF0B007EBEEB /* CreativeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreativeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94D89931E88BF0B007EBEEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C94D899A1E88BF0B007EBEEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +88,15 @@
 			name = EventSelect;
 			sourceTree = "<group>";
 		};
+		C90385E91EC7B10200DDD479 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C90385EA1EC7B11400DDD479 /* Locations.swift */,
+				C90385EC1EC7B13D00DDD479 /* Characters.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		C94D89871E88BF0B007EBEEB = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 		C94D89921E88BF0B007EBEEB /* CreativeProject */ = {
 			isa = PBXGroup;
 			children = (
+				C90385E91EC7B10200DDD479 /* Models */,
 				C94D89931E88BF0B007EBEEB /* AppDelegate.swift */,
 				C94D89A51E88BF55007EBEEB /* GameNavigationController.swift */,
 				C94D89A91E88C057007EBEEB /* Home */,
@@ -230,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90385EB1EC7B11400DDD479 /* Locations.swift in Sources */,
 				C9AB5EA61E8AD62700564DCE /* CharacterSelectViewController.swift in Sources */,
 				C94D89AF1E88C297007EBEEB /* StoryViewController.swift in Sources */,
 				C94D89A61E88BF55007EBEEB /* GameNavigationController.swift in Sources */,
@@ -238,6 +253,7 @@
 				C90385E31EC7A17400DDD479 /* ActivitySelectViewController.swift in Sources */,
 				C94D89A81E88BFB0007EBEEB /* HomeViewController.swift in Sources */,
 				A4165B4D1E8B5D01005CDCAE /* StageSelectViewController.swift in Sources */,
+				C90385ED1EC7B13D00DDD479 /* Characters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
