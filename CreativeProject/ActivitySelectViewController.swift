@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ActivitySelectViewControllerDelegate: class {
+    func completedActivity()
+}
+
 class ActivitySelectViewController: UIViewController {
     
     @IBOutlet private weak var backgroundImageView: UIImageView!
@@ -19,12 +23,16 @@ class ActivitySelectViewController: UIViewController {
     @IBOutlet private weak var secondaryTwoButton: UIButton!
     @IBOutlet private weak var firstStackView: UIStackView!
     @IBOutlet private weak var secondStackView: UIStackView!
+    @IBOutlet private weak var resultLabel: UILabel!
+    @IBOutlet private weak var touchOverlay: UIView!
     
     @IBOutlet private weak var centerConstraint: NSLayoutConstraint!
     @IBOutlet private weak var bottomConstraint: NSLayoutConstraint!
     
     private let location: Location
     private var selectedAction = 0
+    
+    weak var delegate: ActivitySelectViewControllerDelegate?
     
     init(location: Location) {
         self.location = location
@@ -105,6 +113,7 @@ class ActivitySelectViewController: UIViewController {
         secondaryOneButton.isEnabled = false
         secondaryTwoButton.isEnabled = false
         actionImageView.image = results.image
+        resultLabel.text = results.text
         
         UIView.animate(withDuration: 0.3, animations: {
             self.secondStackView.alpha = 0
@@ -118,6 +127,8 @@ class ActivitySelectViewController: UIViewController {
             }) { _ in
                 UIView.animate(withDuration: 0.3, animations: { 
                     self.actionImageView.alpha = 1
+                    self.resultLabel.alpha = 1
+                    self.setUpContinueOverlay()
                 })
             }
         }
@@ -127,6 +138,16 @@ class ActivitySelectViewController: UIViewController {
         optionOneButton.isEnabled = false
         optionTwoButton.isEnabled = false
         optionThreeButton.isEnabled = false
+    }
+    
+    private func setUpContinueOverlay() {
+        touchOverlay.isHidden = false
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(done))
+        touchOverlay.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func done() {
+        delegate?.completedActivity()
     }
     
 }
