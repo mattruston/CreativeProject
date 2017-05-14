@@ -18,9 +18,8 @@ class GameNavigationController: UINavigationController {
     
     let transitionText = "hi"
     
-    let endText = "You tried your best, which wasn't that good at all, but in the end failed for your country. However, you will not have to live with your failure as on minutes after the results were posted, everything you ever knew mysteriously faded out of existance."
-    
     fileprivate var characters: [Character] = []
+    fileprivate var possibleLocations: [Location] = []
     fileprivate var currentCharacter = 0
     fileprivate var roundsComplete = 0
     fileprivate var trainingComplete = false
@@ -52,6 +51,89 @@ class GameNavigationController: UINavigationController {
         }
         
         completedEvents = [false, false, false, false]
+    }
+    
+    fileprivate func resetLocations() {
+        possibleLocations = [.bar, .library, .gym, .park, .cafe, .beach, .concert, .cinema, .stadium]
+    }
+    
+    fileprivate func endStateText() -> String {
+        var victoryType = SuccessType.failure
+        
+        eventOutcomes.sort(by: { (first, second) -> Bool in
+            return first.rawValue > second.rawValue
+        })
+        
+        var overwhelming = false
+        var moderate = false
+        var success = false
+        
+        switch eventOutcomes.count {
+        case 1:
+            overwhelming = eventOutcomes[0] == .overwhelmingSuccess
+            moderate = eventOutcomes[0] == .moderateSuccess
+            success = eventOutcomes[0] == .success
+            
+        case 2:
+            overwhelming = eventOutcomes[0] == .overwhelmingSuccess && eventOutcomes[1] != .failure
+            moderate = eventOutcomes[0] == .moderateSuccess && eventOutcomes[1] != .failure
+            success = eventOutcomes[0] == .overwhelmingSuccess
+            success = success || (eventOutcomes[0] == .success && eventOutcomes[1] == .success)
+            
+        case 3:
+            overwhelming = eventOutcomes[0] == .overwhelmingSuccess &&
+                               eventOutcomes[1].rawValue >= SuccessType.moderateSuccess.rawValue &&
+                               eventOutcomes[2] != .failure
+            moderate = eventOutcomes[0] == .moderateSuccess &&
+                           eventOutcomes[1] != .failure &&
+                           eventOutcomes[2] != .failure
+            success = eventOutcomes[0] == .success && eventOutcomes[1] == .success && eventOutcomes[2] == .success
+            success = success || (eventOutcomes[0] == .overwhelmingSuccess &&
+                                  eventOutcomes[1].rawValue >= SuccessType.success.rawValue)
+            
+        case 4:
+            overwhelming = eventOutcomes[0] == .overwhelmingSuccess &&
+                               eventOutcomes[1] == .overwhelmingSuccess &&
+                               eventOutcomes[2] != .failure &&
+                               eventOutcomes[3] != .failure
+            moderate = eventOutcomes[0].rawValue >= SuccessType.moderateSuccess.rawValue &&
+                           eventOutcomes[1].rawValue >= SuccessType.moderateSuccess.rawValue &&
+                           eventOutcomes[2] != .failure &&
+                           eventOutcomes[3] != .failure
+            success = eventOutcomes[0] == .success &&
+                          eventOutcomes[1] == .success &&
+                          eventOutcomes[2] == .success &&
+                          eventOutcomes[3] == .success
+            success = success || (eventOutcomes[0] == .overwhelmingSuccess &&
+                                  eventOutcomes[1].rawValue >= SuccessType.success.rawValue &&
+                                  eventOutcomes[2].rawValue >= SuccessType.success.rawValue)
+            success = success || (eventOutcomes[0] == .overwhelmingSuccess &&
+                                  eventOutcomes[1] == .overwhelmingSuccess)
+            
+        default:
+            break
+        }
+        
+        if overwhelming {
+            victoryType = .overwhelmingSuccess
+        } else if moderate {
+            victoryType = .moderateSuccess
+        } else if success {
+            victoryType = .success
+        } else {
+            victoryType = .failure
+        }
+        
+        switch victoryType {
+        case .overwhelmingSuccess:
+            return "This is an overwhelming success"
+        case .moderateSuccess:
+            return "This is a moderate success"
+        case .success:
+            return "This is a success"
+        case .failure:
+            return "This is a failure"
+        }
     }
 }
 
@@ -96,9 +178,10 @@ extension GameNavigationController: CharacterSelectViewControllerDelegate {
     func didSelect(characters: [Character]) {
         self.characters = characters
         trainingComplete = true
+        resetLocations()
         
         let character = characters[currentCharacter]
-        let stageSelectViewController = StageSelectViewController(character: character)
+        let stageSelectViewController = StageSelectViewController(character: character, locations: possibleLocations)
         stageSelectViewController.delegate = self
         
         show(stageSelectViewController, sender: self)
@@ -120,15 +203,23 @@ extension GameNavigationController: StageSelectViewControllerDelegate {
 // MARK: - ActivitySelectViewController
 
 extension GameNavigationController: ActivitySelectViewControllerDelegate {
-    func completedActivity() {
+    func completedActivity(at location: Location) {
         // Dismiss the activity view controller, and the previous stage select view controller
         dismiss(animated: false, completion: nil)
         popViewController(animated: false)
         
-        currentCharacter += 1// currentCharacter >= characters.count - 1 ? 0 : currentCharacter + 1
+        for x in 0..<possibleLocations.count {
+            if possibleLocations[x] == location {
+                possibleLocations.remove(at: x)
+                break
+            }
+        }
+        
+        currentCharacter += 1
         if currentCharacter >= characters.count {
             currentCharacter = 0
             roundsComplete += 1
+            resetLocations()
             
             if roundsComplete >= 1 {
                 // Move on to events
@@ -141,7 +232,7 @@ extension GameNavigationController: ActivitySelectViewControllerDelegate {
         
         // Next activity
         let character = characters[currentCharacter]
-        let stageSelectViewController = StageSelectViewController(character: character)
+        let stageSelectViewController = StageSelectViewController(character: character, locations: possibleLocations)
         stageSelectViewController.delegate = self
         pushViewController(stageSelectViewController, animated: false)
     }
@@ -176,11 +267,13 @@ extension GameNavigationController: EventViewControllerDelegate {
         dismiss(animated: false, completion: nil)
         popViewController(animated: false)
         
-        currentCharacter += 1// currentCharacter >= characters.count - 1 ? 0 : currentCharacter + 1
+        currentCharacter += 1
         if currentCharacter >= characters.count {
             gameDone = true
             
-            let endViewController = StoryViewController(text: endText)
+            let endText = endStateText()
+            
+            let endViewController = StoryViewController(text: endText, end: true)
             endViewController.delegate = self
             pushViewController(endViewController, animated: false)
             return

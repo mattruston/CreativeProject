@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ActivitySelectViewControllerDelegate: class {
-    func completedActivity()
+    func completedActivity(at location: Location)
 }
 
 class ActivitySelectViewController: UIViewController {
@@ -167,7 +167,7 @@ class ActivitySelectViewController: UIViewController {
     }
     
     @objc private func done() {
-        delegate?.completedActivity()
+        delegate?.completedActivity(at: location)
     }
     
 }

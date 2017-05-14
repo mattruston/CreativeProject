@@ -24,14 +24,15 @@ class StageSelectViewController: UIViewController {
     @IBOutlet private weak var magicLabel: UILabel!
     @IBOutlet private weak var charmLabel: UILabel!
     
-    let locations: [Location] = [.bar, .library, .gym, .park, .cafe, .beach, .concert, .cinema, .stadium]
+    let locations: [Location]
     let currentCharacter: Character
     weak var delegate: StageSelectViewControllerDelegate?
     
     private var selectedLocation = 0
     
-    init(character: Character) {
-        currentCharacter = character
+    init(character: Character, locations: [Location]) {
+        self.currentCharacter = character
+        self.locations = locations
         
         super.init(nibName: String(describing: StageSelectViewController.self), bundle: nil)
     }
