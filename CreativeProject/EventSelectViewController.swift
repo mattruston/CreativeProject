@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EventSelectViewControllerDelegate: class {
+    func didSelect(event: Event)
+}
+
 class EventSelectViewController: UIViewController {
     
     @IBOutlet private weak var characterImageView: UIImageView!
@@ -24,11 +28,16 @@ class EventSelectViewController: UIViewController {
     @IBOutlet private weak var magicLabel: UILabel!
     @IBOutlet private weak var charmLabel: UILabel!
     
-    private let events = [1, 2, 3, 4]
+    private let events: [Event]
+    private let completedEvents: [Bool]
     private let currentCharacter: Character
     
-    init(character: Character) {
+    weak var delegate: EventSelectViewControllerDelegate?
+    
+    init(character: Character, events: [Event], completed: [Bool]) {
         self.currentCharacter = character
+        self.events = events
+        self.completedEvents = completed
         
         super.init(nibName: String(describing: EventSelectViewController.self), bundle: nil)
     }
@@ -40,12 +49,26 @@ class EventSelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        eventOneButton.setTitleColor(UIColor.lightText, for: .disabled)
-        eventTwoButton.setTitleColor(UIColor.lightText, for: .disabled)
-        eventThreeButton.setTitleColor(UIColor.lightText, for: .disabled)
-        eventFourButton.setTitleColor(UIColor.lightText, for: .disabled)
+        setUpButtons()
         characterImageView.image = currentCharacter.image
         displayCharacterStats()
+    }
+    
+    private func setUpButtons() {
+        let buttons = [eventOneButton, eventTwoButton, eventThreeButton, eventFourButton]
+        
+        for x in 0..<buttons.count {
+            let button = buttons[x]
+            let event = events[x]
+            let used = completedEvents[x]
+            
+            button?.setTitleColor(UIColor.lightGray, for: .disabled)
+            button?.isEnabled = !used
+            button?.setTitle(event.title(), for: .normal)
+            button?.titleLabel?.numberOfLines = 2
+            button?.titleLabel?.lineBreakMode = .byWordWrapping
+            button?.titleLabel?.textAlignment = .center
+        }
     }
     
     private func displayCharacterStats() {
@@ -56,5 +79,21 @@ class EventSelectViewController: UIViewController {
         witsLabel.text = String(currentCharacter.wits)
         magicLabel.text = String(currentCharacter.magic)
         charmLabel.text = String(currentCharacter.charm)
+    }
+    
+    @IBAction private func selectedEventOne() {
+        delegate?.didSelect(event: events[0])
+    }
+    
+    @IBAction private func selectedEventTwo() {
+        delegate?.didSelect(event: events[1])
+    }
+    
+    @IBAction private func selectedEventThree() {
+        delegate?.didSelect(event: events[2])
+    }
+    
+    @IBAction private func selectedEventFour() {
+        delegate?.didSelect(event: events[3])
     }
 }

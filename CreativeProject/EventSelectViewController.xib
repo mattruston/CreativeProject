@@ -176,47 +176,71 @@
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JsI-SG-YpG">
-                    <rect key="frame" x="89" y="243" width="100" height="32"/>
+                    <rect key="frame" x="119" y="243" width="100" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="SqJ-Qt-dAa"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
                     <state key="normal" title="Event Two">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="selectedEventTwo" destination="-1" eventType="touchUpInside" id="P73-Cu-R49"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAs-Pv-ZfJ">
-                    <rect key="frame" x="30" y="112" width="100" height="32"/>
+                    <rect key="frame" x="20" y="112" width="100" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="ebZ-Xu-YIx"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
                     <state key="normal" title="Event One">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="selectedEventOne" destination="-1" eventType="touchUpInside" id="UD7-wC-Yha"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xg-ln-rV9">
-                    <rect key="frame" x="478.5" y="243" width="119" height="32"/>
+                    <rect key="frame" x="448.5" y="243" width="119" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="mvy-Wi-cm0"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
                     <state key="normal" title="Event Three">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="selectedEventThree" destination="-1" eventType="touchUpInside" id="TkP-i3-ax1"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBl-lS-tCN">
-                    <rect key="frame" x="527" y="112" width="110" height="32"/>
+                    <rect key="frame" x="537" y="112" width="110" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="VLE-sg-0Su"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
                     <state key="normal" title="Event Four">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="selectedEventFour" destination="-1" eventType="touchUpInside" id="Ms1-Fc-huw"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.1346940445" green="0.1346940445" blue="0.1346940445" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="PAs-Pv-ZfJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="112" id="64I-iP-z6L"/>
-                <constraint firstAttribute="trailing" secondItem="YBl-lS-tCN" secondAttribute="trailing" constant="30" id="83d-k4-W5m"/>
+                <constraint firstAttribute="trailing" secondItem="YBl-lS-tCN" secondAttribute="trailing" constant="20" id="83d-k4-W5m"/>
                 <constraint firstItem="2xg-ln-rV9" firstAttribute="centerY" secondItem="JsI-SG-YpG" secondAttribute="centerY" id="IAA-YS-UZ5"/>
                 <constraint firstItem="tUy-ns-zxp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="LVD-8a-d1d"/>
                 <constraint firstItem="jaz-gV-cqg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="MaO-Rn-bVf"/>
                 <constraint firstItem="jaz-gV-cqg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ap1-ot-GcO"/>
-                <constraint firstItem="2xg-ln-rV9" firstAttribute="leading" secondItem="tUy-ns-zxp" secondAttribute="trailing" constant="60" id="bN8-HE-XQP"/>
+                <constraint firstItem="2xg-ln-rV9" firstAttribute="leading" secondItem="tUy-ns-zxp" secondAttribute="trailing" constant="30" id="bN8-HE-XQP"/>
                 <constraint firstItem="YBl-lS-tCN" firstAttribute="centerY" secondItem="PAs-Pv-ZfJ" secondAttribute="centerY" id="btT-CE-J1n"/>
-                <constraint firstItem="PAs-Pv-ZfJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="dyx-7R-j3Y"/>
+                <constraint firstItem="PAs-Pv-ZfJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="dyx-7R-j3Y"/>
                 <constraint firstItem="tUy-ns-zxp" firstAttribute="top" secondItem="jaz-gV-cqg" secondAttribute="bottom" constant="10" id="icF-qy-Glz"/>
-                <constraint firstItem="tUy-ns-zxp" firstAttribute="leading" secondItem="JsI-SG-YpG" secondAttribute="trailing" constant="60" id="m72-vJ-sl5"/>
+                <constraint firstItem="tUy-ns-zxp" firstAttribute="leading" secondItem="JsI-SG-YpG" secondAttribute="trailing" constant="30" id="m72-vJ-sl5"/>
                 <constraint firstAttribute="bottom" secondItem="JsI-SG-YpG" secondAttribute="bottom" constant="100" id="xsv-ZS-HM0"/>
             </constraints>
             <point key="canvasLocation" x="34.5" y="54.5"/>

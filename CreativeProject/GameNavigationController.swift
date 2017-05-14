@@ -19,6 +19,10 @@ class GameNavigationController: UINavigationController {
     fileprivate var roundsComplete = 0
     fileprivate var trainingComplete = false
     
+    fileprivate var events: [Event] = []
+    fileprivate var completedEvents: [Bool] = []
+    fileprivate var eventOutcomes: [SuccessType] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +31,17 @@ class GameNavigationController: UINavigationController {
         viewControllers = [homeViewController]
         
         isNavigationBarHidden = true
+    }
+    
+    fileprivate func startEvents() {
+        var possibleEvents: [Event] = [.weddingCakeMaking, .weddingCakeMaking, .weddingCakeMaking, .weddingCakeMaking]
+        for _ in 0..<4 {
+            let index = Int(arc4random_uniform(UInt32(possibleEvents.count)))
+            events.append(possibleEvents[index])
+            possibleEvents.remove(at: index)
+        }
+        
+        completedEvents = [false, false, false, false]
     }
 }
 
@@ -51,7 +66,8 @@ extension GameNavigationController: StoryViewControllerDelegate {
             characterSelectViewController.delegate = self
             show(characterSelectViewController, sender: self)
         } else {
-            let eventSelectViewController = EventSelectViewController(character: characters[currentCharacter])
+            startEvents()
+            let eventSelectViewController = EventSelectViewController(character: characters[currentCharacter], events: events, completed: completedEvents)
             show(eventSelectViewController, sender: self)
         }
     }

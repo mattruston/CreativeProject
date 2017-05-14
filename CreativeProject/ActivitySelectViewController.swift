@@ -55,9 +55,16 @@ class ActivitySelectViewController: UIViewController {
     
     private func setUpButtons() {
         let options = location.options()
-        optionOneButton.setTitle(options[0], for: .normal)
-        optionTwoButton.setTitle(options[1], for: .normal)
-        optionThreeButton.setTitle(options[2], for: .normal)
+        let buttons = [optionOneButton, optionTwoButton, optionThreeButton]
+        
+        for x in 0..<buttons.count {
+            let button = buttons[x]
+            
+            button?.setTitle(options[x], for: .normal)
+            button?.titleLabel?.numberOfLines = 2
+            button?.titleLabel?.lineBreakMode = .byWordWrapping
+            button?.titleLabel?.textAlignment = .center
+        }
     }
     
     @IBAction private func optionOne() {
