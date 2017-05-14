@@ -10,9 +10,14 @@ import UIKit
 
 class GameNavigationController: UINavigationController {
     
+    let introText = "Hi"//"Rumors speak of a spontaneous worldwide competition, one that occurs with little warning. The last supposed occurrence featured events no nation had been able to predict such as cookie baking and horse grooming, but that was centuries ago.\nJust today, the seers appeared once again, unseen for almost three hundred years. The Miramortem Games were announced with the date set for two months down the line. They listed off the participants, and you were included as one of many to represent your nation. No hints are given as to what the nations will be tested on come time of the event, but everyone knows that placing last will have negative consequences.\n\nAfter all, the last nation to supposedly have lost no longer exists."
+    
+    let transitionText = "hi"
+    
     fileprivate var characters: [Character] = []
     fileprivate var currentCharacter = 0
     fileprivate var roundsComplete = 0
+    fileprivate var trainingComplete = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +35,7 @@ class GameNavigationController: UINavigationController {
 
 extension GameNavigationController: HomeViewControllerDelegate {
     func didTapStart() {
-        let introViewController = StoryViewController()
+        let introViewController = StoryViewController(text: introText)
         introViewController.delegate = self
         show(introViewController, sender: self)
     }
@@ -41,9 +46,14 @@ extension GameNavigationController: HomeViewControllerDelegate {
 
 extension GameNavigationController: StoryViewControllerDelegate {
     func didTapNext() {
-        let characterSelectViewController = CharacterSelectViewController()
-        characterSelectViewController.delegate = self
-        show(characterSelectViewController, sender: self)
+        if trainingComplete == false {
+            let characterSelectViewController = CharacterSelectViewController()
+            characterSelectViewController.delegate = self
+            show(characterSelectViewController, sender: self)
+        } else {
+            let eventSelectViewController = EventSelectViewController(character: characters[currentCharacter])
+            show(eventSelectViewController, sender: self)
+        }
     }
 }
 
@@ -53,6 +63,7 @@ extension GameNavigationController: StoryViewControllerDelegate {
 extension GameNavigationController: CharacterSelectViewControllerDelegate {
     func didSelect(characters: [Character]) {
         self.characters = characters
+        trainingComplete = true
         
         let character = characters[currentCharacter]
         let stageSelectViewController = StageSelectViewController(character: character)
@@ -67,7 +78,7 @@ extension GameNavigationController: CharacterSelectViewControllerDelegate {
 
 extension GameNavigationController: StageSelectViewControllerDelegate {
     func didSelect(location: Location) {
-        let activitySelectViewController = ActivitySelectViewController(location: location)
+        let activitySelectViewController = ActivitySelectViewController(location: location, character: characters[currentCharacter])
         activitySelectViewController.delegate = self
         present(activitySelectViewController, animated: false, completion: nil)
     }
@@ -87,8 +98,12 @@ extension GameNavigationController: ActivitySelectViewControllerDelegate {
             currentCharacter = 0
             roundsComplete += 1
             
-            if roundsComplete >= 8 {
+            if roundsComplete >= 1 {
                 // Move on to events
+                let transitionViewController = StoryViewController(text: transitionText)
+                transitionViewController.delegate = self
+                pushViewController(transitionViewController, animated: false)
+                return
             }
         }
         

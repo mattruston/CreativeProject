@@ -1,16 +1,225 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventSelectViewController">
+            <connections>
+                <outlet property="agilityLabel" destination="CT8-Ko-dYm" id="Kzh-RS-XAf"/>
+                <outlet property="brawnLabel" destination="TaK-UF-Wdo" id="eHA-k1-xwB"/>
+                <outlet property="characterImageView" destination="jaz-gV-cqg" id="jqU-NL-TWd"/>
+                <outlet property="charmLabel" destination="r8d-hC-lEl" id="BVf-xI-Zhk"/>
+                <outlet property="enduranceLabel" destination="rAH-Yz-9hy" id="O1S-gB-P0R"/>
+                <outlet property="eventFourButton" destination="YBl-lS-tCN" id="oed-nv-dEU"/>
+                <outlet property="eventOneButton" destination="PAs-Pv-ZfJ" id="zmW-r8-Z1Y"/>
+                <outlet property="eventThreeButton" destination="2xg-ln-rV9" id="QB2-tD-BYp"/>
+                <outlet property="eventTwoButton" destination="JsI-SG-YpG" id="Mgx-09-hcJ"/>
+                <outlet property="finesseLabel" destination="y1P-uy-sIY" id="KMK-eY-GD1"/>
+                <outlet property="magicLabel" destination="FQM-nS-OJC" id="H5o-x2-Kta"/>
+                <outlet property="view" destination="iN0-l3-epB" id="mfa-9N-UpB"/>
+                <outlet property="witsLabel" destination="AxA-Xc-adB" id="rEi-or-UqU"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jaz-gV-cqg">
+                    <rect key="frame" x="283.5" y="20" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="mH2-pM-Xwe"/>
+                        <constraint firstAttribute="width" secondItem="jaz-gV-cqg" secondAttribute="height" multiplier="1:1" id="yrY-87-m1H"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tUy-ns-zxp">
+                    <rect key="frame" x="249" y="130" width="169.5" height="160"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="My4-9b-Tjk">
+                            <rect key="frame" x="0.0" y="0.0" width="169.5" height="23"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brawn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdK-9n-YJk">
+                                    <rect key="frame" x="0.0" y="0.0" width="139.5" height="23"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaK-UF-Wdo">
+                                    <rect key="frame" x="139.5" y="0.0" width="30" height="23"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="kVH-mc-EUf"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="i4F-YI-rm3">
+                            <rect key="frame" x="0.0" y="23" width="169.5" height="22.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endurance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQc-Mp-qOO">
+                                    <rect key="frame" x="0.0" y="0.0" width="139.5" height="22.5"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAH-Yz-9hy">
+                                    <rect key="frame" x="139.5" y="0.0" width="30" height="22.5"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="2e1-Sh-LA3">
+                            <rect key="frame" x="0.0" y="45.5" width="169.5" height="23"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agility" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="382-cv-Krs">
+                                    <rect key="frame" x="0.0" y="0.0" width="139.5" height="23"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CT8-Ko-dYm">
+                                    <rect key="frame" x="139.5" y="0.0" width="30" height="23"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="5jI-aG-LY1">
+                            <rect key="frame" x="0.0" y="68.5" width="169.5" height="23"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finesse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojW-uW-8c5">
+                                    <rect key="frame" x="0.0" y="0.0" width="139.5" height="23"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1P-uy-sIY">
+                                    <rect key="frame" x="139.5" y="0.0" width="30" height="23"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="OjI-Qn-PYJ">
+                            <rect key="frame" x="0.0" y="91.5" width="169.5" height="23"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcV-cX-8f5">
+                                    <rect key="frame" x="0.0" y="0.0" width="139.5" height="23"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxA-Xc-adB">
+                                    <rect key="frame" x="139.5" y="0.0" width="30" height="23"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="JFi-AN-YUr">
+                            <rect key="frame" x="0.0" y="114.5" width="169.5" height="22.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJ7-55-5kf">
+                                    <rect key="frame" x="0.0" y="0.0" width="139.5" height="22.5"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQM-nS-OJC">
+                                    <rect key="frame" x="139.5" y="0.0" width="30" height="22.5"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="1hV-Ss-1dz">
+                            <rect key="frame" x="0.0" y="137" width="169.5" height="23"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hr-Hd-iWb">
+                                    <rect key="frame" x="0.0" y="0.0" width="139.5" height="23"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8d-hC-lEl">
+                                    <rect key="frame" x="139.5" y="0.0" width="30" height="23"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="y1P-uy-sIY" firstAttribute="width" secondItem="TaK-UF-Wdo" secondAttribute="width" id="C1a-sW-qX6"/>
+                        <constraint firstItem="AxA-Xc-adB" firstAttribute="width" secondItem="TaK-UF-Wdo" secondAttribute="width" id="Sw7-po-Iq0"/>
+                        <constraint firstItem="FQM-nS-OJC" firstAttribute="width" secondItem="TaK-UF-Wdo" secondAttribute="width" id="UYa-NX-SF7"/>
+                        <constraint firstItem="CT8-Ko-dYm" firstAttribute="width" secondItem="TaK-UF-Wdo" secondAttribute="width" id="eXb-OC-5Yb"/>
+                        <constraint firstAttribute="height" constant="160" id="iEc-r7-gpL"/>
+                        <constraint firstItem="r8d-hC-lEl" firstAttribute="width" secondItem="TaK-UF-Wdo" secondAttribute="width" id="p17-TT-aTv"/>
+                        <constraint firstItem="rAH-Yz-9hy" firstAttribute="width" secondItem="TaK-UF-Wdo" secondAttribute="width" id="vcW-Rg-qgL"/>
+                    </constraints>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JsI-SG-YpG">
+                    <rect key="frame" x="89" y="243" width="100" height="32"/>
+                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
+                    <state key="normal" title="Event Two">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAs-Pv-ZfJ">
+                    <rect key="frame" x="30" y="112" width="100" height="32"/>
+                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
+                    <state key="normal" title="Event One">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xg-ln-rV9">
+                    <rect key="frame" x="478.5" y="243" width="119" height="32"/>
+                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
+                    <state key="normal" title="Event Three">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBl-lS-tCN">
+                    <rect key="frame" x="527" y="112" width="110" height="32"/>
+                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
+                    <state key="normal" title="Event Four">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.1346940445" green="0.1346940445" blue="0.1346940445" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="PAs-Pv-ZfJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="112" id="64I-iP-z6L"/>
+                <constraint firstAttribute="trailing" secondItem="YBl-lS-tCN" secondAttribute="trailing" constant="30" id="83d-k4-W5m"/>
+                <constraint firstItem="2xg-ln-rV9" firstAttribute="centerY" secondItem="JsI-SG-YpG" secondAttribute="centerY" id="IAA-YS-UZ5"/>
+                <constraint firstItem="tUy-ns-zxp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="LVD-8a-d1d"/>
+                <constraint firstItem="jaz-gV-cqg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="MaO-Rn-bVf"/>
+                <constraint firstItem="jaz-gV-cqg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ap1-ot-GcO"/>
+                <constraint firstItem="2xg-ln-rV9" firstAttribute="leading" secondItem="tUy-ns-zxp" secondAttribute="trailing" constant="60" id="bN8-HE-XQP"/>
+                <constraint firstItem="YBl-lS-tCN" firstAttribute="centerY" secondItem="PAs-Pv-ZfJ" secondAttribute="centerY" id="btT-CE-J1n"/>
+                <constraint firstItem="PAs-Pv-ZfJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="dyx-7R-j3Y"/>
+                <constraint firstItem="tUy-ns-zxp" firstAttribute="top" secondItem="jaz-gV-cqg" secondAttribute="bottom" constant="10" id="icF-qy-Glz"/>
+                <constraint firstItem="tUy-ns-zxp" firstAttribute="leading" secondItem="JsI-SG-YpG" secondAttribute="trailing" constant="60" id="m72-vJ-sl5"/>
+                <constraint firstAttribute="bottom" secondItem="JsI-SG-YpG" secondAttribute="bottom" constant="100" id="xsv-ZS-HM0"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>
 </document>

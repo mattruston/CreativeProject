@@ -30,12 +30,14 @@ class ActivitySelectViewController: UIViewController {
     @IBOutlet private weak var bottomConstraint: NSLayoutConstraint!
     
     private let location: Location
+    private let currentCharacter: Character
     private var selectedAction = 0
     
     weak var delegate: ActivitySelectViewControllerDelegate?
     
-    init(location: Location) {
+    init(location: Location, character: Character) {
         self.location = location
+        self.currentCharacter = character
         
         super.init(nibName: String(describing: ActivitySelectViewController.self), bundle: nil)
     }
@@ -114,6 +116,7 @@ class ActivitySelectViewController: UIViewController {
         secondaryTwoButton.isEnabled = false
         actionImageView.image = results.image
         resultLabel.text = results.text
+        updateCharacter(for: results)
         
         UIView.animate(withDuration: 0.3, animations: {
             self.secondStackView.alpha = 0
@@ -132,6 +135,16 @@ class ActivitySelectViewController: UIViewController {
                 })
             }
         }
+    }
+    
+    private func updateCharacter(for results: ActivityResults) {
+        currentCharacter.agility += results.agility
+        currentCharacter.brawn += results.brawn
+        currentCharacter.charm += results.charm
+        currentCharacter.endurance += results.endurance
+        currentCharacter.finesse += results.finesse
+        currentCharacter.magic += results.magic
+        currentCharacter.wits += results.wits
     }
     
     private func disablePrimaryButtons() {

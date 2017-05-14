@@ -44,6 +44,9 @@ class CharacterSelectViewController: UIViewController {
         character4Tapped.numberOfTapsRequired = 1
         character4Icon.addGestureRecognizer(character4Tapped)
         character4Icon.isUserInteractionEnabled = true
+        
+        continueButton.setTitleColor(UIColor.lightText, for: .disabled)
+        continueButton.setTitleColor(UIColor.white, for: .normal)
 
     }
     

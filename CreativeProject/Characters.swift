@@ -28,6 +28,16 @@ enum CharacterType {
     }
 }
 
+enum Trait {
+    case brawn
+    case endurance
+    case agility
+    case finesse
+    case wits
+    case magic
+    case charm
+}
+
 class Character {
     var type: CharacterType = .character1
     var brawn = 5
