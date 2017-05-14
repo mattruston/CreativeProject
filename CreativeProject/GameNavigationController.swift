@@ -50,6 +50,17 @@ extension GameNavigationController: CharacterSelectViewControllerDelegate {
     func didSelect() {
         let character = Character()
         let stageSelectViewController = StageSelectViewController(character: character)
+        stageSelectViewController.delegate = self
         show(stageSelectViewController, sender: self)
+    }
+}
+
+
+// MARK: - StageSelectViewControllerDelegate
+
+extension GameNavigationController: StageSelectViewControllerDelegate {
+    func didSelect(location: Location) {
+        let activitySelectViewController = ActivitySelectViewController(location: location)
+        present(activitySelectViewController, animated: false, completion: nil)
     }
 }

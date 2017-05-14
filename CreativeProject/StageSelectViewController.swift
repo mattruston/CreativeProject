@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol StageSelectViewControllerDelegate: class {
+    func didSelect(location: Location)
+}
+
 class StageSelectViewController: UIViewController {
     
     @IBOutlet private weak var backgroundImageView: UIImageView!
@@ -22,6 +26,7 @@ class StageSelectViewController: UIViewController {
     
     let locations: [Location] = [.bar, .library, .gym, .park, .cafe, .beach, .concert, .cinema, .stadium]
     let currentCharacter: Character
+    weak var delegate: StageSelectViewControllerDelegate?
     
     private var selectedLocation = 0
     
@@ -51,6 +56,10 @@ class StageSelectViewController: UIViewController {
     @IBAction private func nextLocation() {
         selectedLocation = selectedLocation >= locations.count - 1 ? 0 : selectedLocation + 1
         updateImage()
+    }
+    
+    @IBAction private func select() {
+        delegate?.didSelect(location: locations[selectedLocation])
     }
     
     private func updateImage() {
