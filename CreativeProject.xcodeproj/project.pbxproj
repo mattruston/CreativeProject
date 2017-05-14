@@ -16,6 +16,8 @@
 		C90385EB1EC7B11400DDD479 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90385EA1EC7B11400DDD479 /* Locations.swift */; };
 		C90385ED1EC7B13D00DDD479 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90385EC1EC7B13D00DDD479 /* Characters.swift */; };
 		C90385EF1EC8032200DDD479 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90385EE1EC8032200DDD479 /* Event.swift */; };
+		C90385F21EC8177E00DDD479 /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90385F11EC8177E00DDD479 /* EventViewController.xib */; };
+		C90385F41EC8178900DDD479 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90385F31EC8178900DDD479 /* EventViewController.swift */; };
 		C94D89941E88BF0B007EBEEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94D89931E88BF0B007EBEEB /* AppDelegate.swift */; };
 		C94D899B1E88BF0B007EBEEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C94D899A1E88BF0B007EBEEB /* Assets.xcassets */; };
 		C94D899E1E88BF0B007EBEEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94D899C1E88BF0B007EBEEB /* LaunchScreen.storyboard */; };
@@ -38,6 +40,8 @@
 		C90385EA1EC7B11400DDD479 /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		C90385EC1EC7B13D00DDD479 /* Characters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		C90385EE1EC8032200DDD479 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		C90385F11EC8177E00DDD479 /* EventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventViewController.xib; sourceTree = "<group>"; };
+		C90385F31EC8178900DDD479 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		C94D89901E88BF0B007EBEEB /* CreativeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreativeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94D89931E88BF0B007EBEEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C94D899A1E88BF0B007EBEEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +104,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		C90385F01EC8175F00DDD479 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				C90385F11EC8177E00DDD479 /* EventViewController.xib */,
+				C90385F31EC8178900DDD479 /* EventViewController.swift */,
+			);
+			name = Event;
+			sourceTree = "<group>";
+		};
 		C94D89871E88BF0B007EBEEB = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +141,7 @@
 				A4165B4B1E8B5CCB005CDCAE /* StageSelect */,
 				C90385DF1EC7A0F000DDD479 /* ActivitySelect */,
 				C90385E41EC7A29D00DDD479 /* EventSelect */,
+				C90385F01EC8175F00DDD479 /* Event */,
 				C94D89AA1E88C06D007EBEEB /* Resources */,
 			);
 			path = CreativeProject;
@@ -230,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C94D89B11E88C2B4007EBEEB /* StoryViewController.xib in Resources */,
+				C90385F21EC8177E00DDD479 /* EventViewController.xib in Resources */,
 				A4165B4F1E8B5D27005CDCAE /* StageSelectViewController.xib in Resources */,
 				C9AB5EA81E8AD64600564DCE /* CharacterSelectViewController.xib in Resources */,
 				C94D899E1E88BF0B007EBEEB /* LaunchScreen.storyboard in Resources */,
@@ -252,6 +267,7 @@
 				C9AB5EA61E8AD62700564DCE /* CharacterSelectViewController.swift in Sources */,
 				C94D89AF1E88C297007EBEEB /* StoryViewController.swift in Sources */,
 				C94D89A61E88BF55007EBEEB /* GameNavigationController.swift in Sources */,
+				C90385F41EC8178900DDD479 /* EventViewController.swift in Sources */,
 				C90385E81EC7A2C900DDD479 /* EventSelectViewController.swift in Sources */,
 				C94D89941E88BF0B007EBEEB /* AppDelegate.swift in Sources */,
 				C90385E31EC7A17400DDD479 /* ActivitySelectViewController.swift in Sources */,
