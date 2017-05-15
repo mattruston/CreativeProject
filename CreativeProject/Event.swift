@@ -113,7 +113,7 @@ enum Event {
     // MARK: - Helper Functions
     
     private func eventSuccess(for value: Int) -> Int {
-        let bounds = [11, 15, 19]
+        let bounds = [8, 11, 15]
         var score = 0
         
         for x in bounds {
@@ -147,7 +147,7 @@ enum Event {
         results.success = success
         
         if success == .failure {
-            results.text = "You know absolutely nothing about making cakes, especially not the grandiose wedding cakes they’re desiring. You try to throw together something resembling a cake, but the seers see through your attempt."
+            results.text = "You know absolutely nothing about making cakes, especially not the grandiose wedding cakes they’re desiring. You try to throw together something resembling a cake, but the Seers see through your attempt."
             return results
         }
         
@@ -155,11 +155,11 @@ enum Event {
         case .finesse:
             switch success {
             case .success:
-                results.text = "Despite your lack of knowledge relating to how to make cakes and what exactly they should look like, you create a cake that is, at the very least, a cake. Technically, you succeed, but the seers find others more enjoyable."
+                results.text = "Despite your lack of knowledge relating to how to make cakes and what exactly they should look like, you create a cake that is, at the very least, a cake. Technically, you succeed, but the Seers find others more enjoyable."
             case .moderateSuccess:
-                results.text = "You do your very best with the what you have, spending a lot of time attempting to create as beautiful of a cake as possible. The seers are impressed with your effort, but find the dessert somewhat lacking in both taste and appearance."
+                results.text = "You do your very best with the what you have, spending a lot of time attempting to create as beautiful of a cake as possible. The Seers are impressed with your effort, but find the dessert somewhat lacking in both taste and appearance."
             case .overwhelmingSuccess:
-                results.text = "You may not know what cake the seers are craving, but you have mastered the art of decoration thanks to your steady hands. You create a dessert of unparalleled beauty, impressing the seers with appearance alone."
+                results.text = "You may not know what cake the Seers are craving, but you have mastered the art of decoration thanks to your steady hands. You create a dessert of unparalleled beauty, impressing the Seers with appearance alone."
             case .failure:
                 break
             }
@@ -168,7 +168,7 @@ enum Event {
             case .success:
                 results.text = "Considering that it is very difficult to bull-shit your way through a cooking challenge, the fact that you succeed at all is praiseworthy. The cake is lackluster in both taste and appearance, but it is a cake, which, ultimately, was the goal."
             case .moderateSuccess:
-                results.text = "You attempt to glean from the seers what type of cake they are craving, but your inquiries are largely shut down. You make your best guess based on what people usually like and manage to create a pretty and edible cake, but not quite what was desired in either sense."
+                results.text = "You attempt to glean from the Seers what type of cake they are craving, but your inquiries are largely shut down. You make your best guess based on what people usually like and manage to create a pretty and edible cake, but not quite what was desired in either sense."
             case .overwhelmingSuccess:
                 results.text = "Before you begin cooking, you make some small talk with the judges, all harmless, but, with that, you manage to figure out what exactly they’re craving. Your cake could be a little prettier, but the taste is exactly what was desired."
             case .failure:
@@ -201,7 +201,7 @@ enum Event {
         results.success = success
         
         if success == .failure {
-            results.text = "You’re unable to reach any of the bulbs before other competitors and fall behind with every second that passes. You position yourself near changed bulbs, hoping they’ll be attributed to you, but the seers know you failed."
+            results.text = "You’re unable to reach any of the bulbs before other competitors and fall behind with every second that passes. You position yourself near changed bulbs, hoping they’ll be attributed to you, but the Seers know you failed."
             return results
         }
         
@@ -209,11 +209,11 @@ enum Event {
         case .agility:
             switch success {
             case .success:
-                results.text = "You attempt to rush about the field and get as many lightbulbs as possible, but often end up switching the dead bulb for another dead one. You still succeed, since at least one bulb was changed, but the seers remain unimpressed."
+                results.text = "You attempt to rush about the field and get as many lightbulbs as possible, but often end up switching the dead bulb for another dead one. You still succeed, since at least one bulb was changed, but the Seers remain unimpressed."
             case .moderateSuccess:
-                results.text = "You rush around the field, changing every lightbulb that you can get your hands on, but you’re not as fast as you could be. Ultimately, you still get through a lot of them, and the seers approve of that."
+                results.text = "You rush around the field, changing every lightbulb that you can get your hands on, but you’re not as fast as you could be. Ultimately, you still get through a lot of them, and the Seers approve of that."
             case .overwhelmingSuccess:
-                results.text = "You’re not entirely sure what the seers want as the result of this event, but you change as many lightbulbs as you possibly can, actually getting around to the bulbs of your competitors as well. The seers seem to nod approvingly."
+                results.text = "You’re not entirely sure what the Seers want as the result of this event, but you change as many lightbulbs as you possibly can, actually getting around to the bulbs of your competitors as well. The Seers seem to nod approvingly."
             case .failure:
                 break
             }
@@ -222,9 +222,9 @@ enum Event {
             case .success:
                 results.text = "You focus so much on getting the lightbulb to be perfect that you completely forget that it’s a competition. When time is called, you only managed to change a single bulb, which means you technically succeeded."
             case .moderateSuccess:
-                results.text = "Instead of rushing about, you focus on doing what you can, getting as many lightbulbs to as close to perfect as possible. You don’t quite reach that goal of perfection with your efforts, but still receive the approval of the seers."
+                results.text = "Instead of rushing about, you focus on doing what you can, getting as many lightbulbs to as close to perfect as possible. You don’t quite reach that goal of perfection with your efforts, but still receive the approval of the Seers."
             case .overwhelmingSuccess:
-                results.text = "Quality is more important than quantity. You may not get to as many light bulbs as some of your fellow competitors, but the ones you get around to are absolutely perfect. You catch one of the seers smiling."
+                results.text = "Quality is more important than quantity. You may not get to as many light bulbs as some of your fellow competitors, but the ones you get around to are absolutely perfect. You catch one of the Seers smiling."
             case .failure:
                 break
             }
@@ -255,7 +255,7 @@ enum Event {
         results.success = success
         
         if success == .failure {
-            results.text = "Despite the resources at hand, your combination of ingredients, chosen almost at random, doesn’t result in anything. It smells rather funky, and the seers are unable to get it to do anything."
+            results.text = "Despite the resources at hand, your combination of ingredients, chosen almost at random, doesn’t result in anything. It smells rather funky, and the Seers are unable to get it to do anything."
             return results
         }
         
@@ -265,7 +265,7 @@ enum Event {
             case .success:
                 results.text = "You recall all of your study over the years. Well, you try to anyway. Using the fragments of what you remember, you create some concoction. You’re not entirely sure what it does, but you’re sure it does something."
             case .moderateSuccess:
-                results.text = "While you consider yourself an expert on all things magical, you falter when put to the test. The potion you manage to pull together lacks the oomf you promised when describing it to the seers, but, at least, the recipe is original."
+                results.text = "While you consider yourself an expert on all things magical, you falter when put to the test. The potion you manage to pull together lacks the oomf you promised when describing it to the Seers, but, at least, the recipe is original."
             case .overwhelmingSuccess:
                 results.text = "Having spent a lot of time in your life both studying and doing magic, creating a potion is a piece of cake for you. You don’t use any of the provided references and easily conjure up an entirely original concoction."
             case .failure:
@@ -274,9 +274,9 @@ enum Event {
         case .charm:
             switch success {
             case .success:
-                results.text = "You use the references provided to create a textbook potion. While it performs as anticipated, it lacks creativity and originality.  Still, your potion does exactly as expected, so the seers can’t fault you too much."
+                results.text = "You use the references provided to create a textbook potion. While it performs as anticipated, it lacks creativity and originality.  Still, your potion does exactly as expected, so the Seers can’t fault you too much."
             case .moderateSuccess:
-                results.text = "With the knowledge gained from the various provided resources, you concoct what you think will be a rather effective love potion. When the seers test it, it explodes, doing a significant amount of damage."
+                results.text = "With the knowledge gained from the various provided resources, you concoct what you think will be a rather effective love potion. When the Seers test it, it explodes, doing a significant amount of damage."
             case .overwhelmingSuccess:
                 results.text = "You have some knowledge of magic, but, better than that, you know how to take advantage of resources. You spend most of your time studying the provided books, seeing how ingredients mix. In the end, you pull together an original concoction never seen before."
             case .failure:
@@ -334,7 +334,7 @@ enum Event {
         case .charm:
             switch success {
             case .success:
-                results.text = "You speak at length, for nearly the entirety of the allotted time, before a demon finally appears. It’s tiny and gives you a lot of attitude, but the seers acknowledge your success."
+                results.text = "You speak at length, for nearly the entirety of the allotted time, before a demon finally appears. It’s tiny and gives you a lot of attitude, but the Seers acknowledge your success."
             case .moderateSuccess:
                 results.text = "You decide to skip out on all the actual magic involved in summoning and simply speak to all listening demons. It takes a while, but eventually a medium sized demon gives into your offerings and appears."
             case .overwhelmingSuccess:
@@ -388,7 +388,7 @@ enum Event {
         case .finesse:
             switch success {
             case .success:
-                results.text = "Having never used a yoyo in your life, you spend the majority of your allotted time simply trying to get it to behave in the way that it’s intended to. Eventually, you manage to pull off a few simple tricks for the seers, though with a few mistakes."
+                results.text = "Having never used a yoyo in your life, you spend the majority of your allotted time simply trying to get it to behave in the way that it’s intended to. Eventually, you manage to pull off a few simple tricks for the Seers, though with a few mistakes."
             case .moderateSuccess:
                 results.text = "After a brief period of fiddling with the provided yoyo, you spend time running through all the tricks you know. You mess up on a few of them, but you manage to pull off some of the most complicated tricks with ease."
             case .overwhelmingSuccess:
@@ -399,7 +399,7 @@ enum Event {
         case .agility:
             switch success {
             case .success:
-                results.text = "Turns out you only know a single yoyo trick, so you end up doing it dozens of times within the allotted timespan. While the seers eventually get bored of your one trick, they do recognize the fact that you did do at least one."
+                results.text = "Turns out you only know a single yoyo trick, so you end up doing it dozens of times within the allotted timespan. While the Seers eventually get bored of your one trick, they do recognize the fact that you did do at least one."
             case .moderateSuccess:
                 results.text = "You perform every single trick you can think of but quickly realize you don’t know as many as you thought. You quickly end up repeating tricks, sometimes messing up in your repeated attempts."
             case .overwhelmingSuccess:
@@ -491,7 +491,7 @@ enum Event {
         var results = EventResults()
         results.image = #imageLiteral(resourceName: "firebuilding")
         
-        let wits = eventSuccess(for: character.wits + character.endurance)
+        let wits = eventSuccess(for: character.wits + character.endurance - 5)
         var bestType = Trait.wits
         var bestScore = wits
         
@@ -632,7 +632,7 @@ enum Event {
         case .wits:
             switch success {
             case .success:
-                results.text = "You spend some time thinking of various things you can talk about, but you find yourself struggling when it comes to actually delivery of them. Still, your partner found you to be pleasant enough."
+                results.text = "You spend some time thinking of various things you can talk about, but you find yourself struggling when it comes to the actual delivery of them. Still, your partner found you to be pleasant enough."
             case .moderateSuccess:
                 results.text = "While you could have planned a bit more for the date, you prove yourself to be an entertaining conversationalist nonetheless, keeping your partner engaged and having fun the whole time."
             case .overwhelmingSuccess:
@@ -653,11 +653,11 @@ enum Event {
         var results = EventResults()
         results.image = #imageLiteral(resourceName: "ikeafurniture")
         
-        let brawn = eventSuccess(for: character.brawn + character.endurance)
+        let brawn = eventSuccess(for: character.brawn + character.endurance - 5)
         var bestType = Trait.brawn
         var bestScore = brawn
         
-        let finesse = eventSuccess(for: character.finesse + character.wits)
+        let finesse = eventSuccess(for: character.finesse + character.wits - 5)
         if finesse > bestScore {
             bestType = .finesse
             bestScore = finesse
@@ -792,7 +792,7 @@ enum Event {
         results.success = success
         
         if success == .failure {
-            results.text = "You spend hours wandering about aimlessly, feeling utterly lost. You’re almost positive that you have been walking in circles for at least a good hour. In the end, you don’t make it to the finish line to be judged by the seers."
+            results.text = "You spend hours wandering about aimlessly, feeling utterly lost. You’re almost positive that you have been walking in circles for at least a good hour. In the end, you don’t make it to the finish line to be judged by the Seers."
             return results
         }
         
@@ -954,7 +954,7 @@ enum Event {
         results.success = success
         
         if success == .failure {
-            results.text = "You attempt to wrangle the dogs assigned to you into some sort of organized pack, but, by doing so, you run out of time to actually walk them. When the seers come to judge you, they find a dozen hyper dogs tangled together. Not impressive at all."
+            results.text = "You attempt to wrangle the dogs assigned to you into some sort of organized pack, but, by doing so, you run out of time to actually walk them. When the Seers come to judge you, they find a dozen hyper dogs tangled together. Not impressive at all."
             return results
         }
         

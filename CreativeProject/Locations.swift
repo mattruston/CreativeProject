@@ -132,7 +132,7 @@ enum Location {
         switch option {
         case 1:
             results.endurance = 2
-            results.text = "You watch the week pass by from a comfortable seat at the local bar. Company comes and goes as you sit, but at least the beverages are consistantly delicious."
+            results.text = "You watch the week pass by from a comfortable seat at the local bar. Company comes and goes as you sit, but at least the beverages are consistently delicious."
             results.image = #imageLiteral(resourceName: "drinking")
         case 2:
             results.charm = 1
@@ -141,7 +141,7 @@ enum Location {
             results.image = #imageLiteral(resourceName: "flirting")
         case 3:
             results.finesse = 2
-            results.text = "You find your time best spent on the dance floor of your preferred bar. You alternate between dancing solo and wtih various partners until the week comes to an end."
+            results.text = "You find your time best spent on the dance floor of your preferred bar. You alternate between dancing solo and with various partners until the week comes to an end."
             results.image = #imageLiteral(resourceName: "dance")
         default:
             return nil
@@ -180,7 +180,7 @@ enum Location {
             results.image = #imageLiteral(resourceName: "workinglibrary")
         case 2:
             results.wits = 2
-            results.text = "You lock yourself within the comfortable walls of the library for a week, diving into book after book, exploring all the genres you can think. You find yourself feeling a little more knowledgeable when all is said and done."
+            results.text = "You lock yourself within the comfortable walls of the library for a week, diving into book after book, exploring all the genres you can think of. You find yourself feeling a little more knowledgeable when all is said and done."
             results.image = #imageLiteral(resourceName: "read")
         case 3:
             results.magic = 2
@@ -222,12 +222,12 @@ enum Location {
             results.image = #imageLiteral(resourceName: "strengthtraining")
         case 2:
             results.endurance = 2
-            results.text = "While treadmills may not be the most exciting way to spend your time, you find yourself jogging along quite comfortably all weak. With each run, you go a little further."
+            results.text = "While treadmills may not be the most exciting way to spend your time, you find yourself jogging along quite comfortably all week. With each run, you go a little further."
             results.image = #imageLiteral(resourceName: "endurancetraining")
         case 3:
             results.agility = 1
             results.finesse = 1
-            results.text = "You do various exercises throughout the gym to improve your reaction time and processing ability. By the end of the weak, you’re feeling like you could catch almost anything thrown suddenly at you."
+            results.text = "You do various exercises throughout the gym to improve your reaction time and processing ability. By the end of the week, you’re feeling like you could catch almost anything thrown suddenly at you."
             results.image = #imageLiteral(resourceName: "agilitytraining")
         default:
             return nil
@@ -310,7 +310,7 @@ enum Location {
             results.image = #imageLiteral(resourceName: "people")
         case 13:
             results.finesse = 2
-            results.text = "Since you won’t always have the competition to look forward to, you choose to work during the week in order to build up some savings. You find yourself best suited behind the bar making the various cafes and mochas that people order. With each drink, you feel a little more competent."
+            results.text = "Since you won’t always have the competition to look forward to, you choose to work during the week. You find yourself best suited behind the bar making the various coffees and mochas that people order. With each drink, you feel a little more competent."
             results.image = #imageLiteral(resourceName: "cafework")
         case 22:
             results.magic = 2
@@ -318,7 +318,7 @@ enum Location {
             results.image = #imageLiteral(resourceName: "people")
         case 23:
             results.brawn = 2
-            results.text = "Since you won’t always have the competition to look forward to, you choose to work during the week in order to build up some savings. You find yourself best suited working in the back stacking boxes. With nothing but your own company, you find it easy to focus on the task at hand."
+            results.text = "Since you won’t always have the competition to look forward to, you choose to work during the week. You find yourself best suited working in the back stacking boxes. With nothing but your own company, you find it easy to focus on the task at hand."
             results.image = #imageLiteral(resourceName: "cafestorage")
         default:
             return nil
@@ -336,7 +336,7 @@ enum Location {
     private func beachOptions(for option: Int) -> [String] {
         switch option {
         case 1:
-            return ["...fast", "far"]
+            return ["...fast", "...far"]
         default:
             return []
         }
@@ -357,7 +357,7 @@ enum Location {
             results.image = #imageLiteral(resourceName: "benching")
         case 11:
             results.agility = 2
-            results.text = "The ocean calls to you and you give in, enjoying the waters, and seeing how far you can swim in certain amount of time. With each lap you make, you finish faster than the one before."
+            results.text = "The ocean calls to you and you give in, enjoying the waters, and seeing how far you can swim in a certain amount of time. With each lap you make, you finish faster than the one before."
             results.image = #imageLiteral(resourceName: "shortswim")
         case 21:
             results.endurance = 2
@@ -395,12 +395,12 @@ enum Location {
         case 2:
             results.endurance = 1
             results.finesse = 1
-            results.text = "You pass your time attending every performance you can, finding great pleasure in the being part of the crowd. You dance and sing along with those around you for hours until you run out of energy."
+            results.text = "You pass your time attending every performance you can, finding great pleasure in being part of the crowd. You dance and sing along with those around you for hours until you run out of energy."
             results.image = #imageLiteral(resourceName: "concertcrowd")
         case 3:
             results.brawn = 1
             results.wits = 1
-            results.text = "In order to both enjoy the shows and make a little money, you work for the various shows happening at the concert hall as security. You get quite the workout keeping the crowds in check."
+            results.text = "In order to both enjoy the shows and make a little money, you work for the various events happening at the concert hall as security. You get quite the workout keeping the crowds in check."
             results.image = #imageLiteral(resourceName: "concertwork")
         default:
             return nil
@@ -439,11 +439,11 @@ enum Location {
             results.image = #imageLiteral(resourceName: "arcadegames")
         case 13:
             results.agility = 2
-            results.text = "You want to watch movies but don’t quite have the money to pay for a numerable number of tickets, so you sneak into the theaters using .stealth. You slip past security at every opportunity. Every close call helps you improve for your next attempt."
+            results.text = "You want to watch movies but don’t quite have the money to pay for a significant number of tickets, so you sneak into the theaters using stealth. You slip past security at every opportunity. Every close call helps you improve for your next attempt."
             results.image = #imageLiteral(resourceName: "sneaking")
         case 23:
             results.magic = 2
-            results.text = "You want to watch movies but don’t quite have the money to pay for a numerable number of tickets, so you sneak into the theaters using camouflage. You use magic in order to disguise yourself as nothing more than the scenery, easily slipping past any who might stop you."
+            results.text = "You want to watch movies but don’t quite have the money to pay for a significant number of tickets, so you sneak into the theaters using camouflage. You use magic in order to disguise yourself as nothing more than the scenery, easily slipping past any who might stop you."
             results.image = #imageLiteral(resourceName: "sneaking")
         default:
             return nil
